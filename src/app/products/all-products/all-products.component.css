@@ -1,0 +1,18 @@
+.banner{
+    background-image: url('https://thumbs.dreamstime.com/b/men-women-taking-part-seasonal-sale-store-shop-mall-cartoon-characters-concept-black-friday-collection-people-141085705.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 400px;
+}
+.card img{
+    transition: 3s;
+    height: 250px;
+    width: 100%;
+    padding: 20px;
+}
+.card img:hover{
+    transform: scale(1.1);
+    transition: 2s;
+}

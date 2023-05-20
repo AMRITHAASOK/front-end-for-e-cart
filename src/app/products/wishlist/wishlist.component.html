@@ -1,0 +1,43 @@
+<!-- empty wishlist -->
+<div class="" *ngIf="allwishlistitem.length==0">
+    <div class="row">
+        <!-- <h1 class="text-center mt-4">Your Wishlist Is Empty 😓</h1> -->
+        <div class="col text-center">
+            
+            <img width="700px" height="400px" src="https://cdn.dribbble.com/users/392618/screenshots/2121061/wishlist.gif" alt="">
+        </div>
+        <div class="text-center  p-5">
+            <a class="btn btn-outline-primary " routerLink="">Shop More 🛒</a>
+        </div>
+    </div>
+</div>
+<!-- wishlist with content -->
+<section class="py-5" *ngIf="allwishlistitem.length!=0">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let wish of allwishlistitem">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" width="200px" height="300px" [src]="wish.image" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{wish.title}}</h5>
+                            <!-- Product price-->
+                            ${{wish.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                       
+                        <div class="mt-2">
+                            <a (click)="removewishlistitem(wish.id)" class="ms-2 btn btn-danger fa-beat me-5" > <i class="fa-solid fa-trash"></i>  </a>
+                            <a (click)="addtocart(wish)" class="btn btn-primary fa-beat ms-4" > <i class="fa-solid fa-cart-plus"></i>  </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>

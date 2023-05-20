@@ -1,0 +1,40 @@
+<header  class="banner bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <!-- <h1 class="display-4 fw-bolder text-primary shadow bg-light">Shop in style</h1>
+            <p class="lead fw-normal text-primary mb-0 bg-light shadow">With Our shop </p> -->
+        </div>
+    </div>
+</header>
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let product of allProducts | filter:searchTerm:'title' ">
+                <div class="card h-100 shadow">
+                    <!-- Product image-->
+                    <img class="card-img-top" [src]="product.image" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{product.title}}</h5>
+                            <!-- Product price-->
+                            ${{product.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <a class="btn btn-outline-primary mt-auto" routerLink="viewproducts/{{product.id}}"> <i class="fa-solid fa-eye"></i> View Product </a>
+                        
+                        </div>
+                        <div class="mt-2">
+                            <a class="ms-2 btn btn-danger fa-beat me-5" routerLink="viewproducts/:id"> <i class="fa-solid fa-heart"></i>  </a>
+                            <a (click)="addtocart(product)" class="btn btn-primary fa-beat ms-4" > <i class="fa-solid fa-cart-plus"></i>  </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
